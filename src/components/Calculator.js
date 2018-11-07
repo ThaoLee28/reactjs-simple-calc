@@ -10,25 +10,25 @@ class Calculator extends Component {
     }
   }
   handleAdd = () => {
-    const add = parseInt(this.state.val1) + parseInt(this.state.val2)
+    const add = parseFloat(this.state.val1) + parseFloat(this.state.val2)
     this.setState({
       result: add,
     })
   }
   handleSubtract = () => {
-    const subtract = parseInt(this.state.val1) - parseInt(this.state.val2)
+    const subtract = parseFloat(this.state.val1) - parseFloat(this.state.val2)
     this.setState({
       result: subtract,
     })
   }
   handleMultiply = () => {
-    const multiply = parseInt(this.state.val1) * parseInt(this.state.val2)
+    const multiply = parseFloat(this.state.val1) * parseFloat(this.state.val2)
     this.setState({
       result: multiply,
     })
   }
   handleDivide = () => {
-    const divide = parseInt(this.state.val1) / parseInt(this.state.val2)
+    const divide = parseFloat(this.state.val1) / parseFloat(this.state.val2)
     this.setState({
       result: divide,
     })
@@ -45,7 +45,7 @@ class Calculator extends Component {
               className="border border-solid flex-1 mr-2 h-10 rounded p-5"
               placeholder="NUMBER e.g. 1337"
               type="text"
-              pattern="[0-9]*"
+              pattern="[-+]?[0-9]*\.?[0-9]*."
               value={this.state.val1}
               onChange={(e) => {
                 const a = (e.target.validity.valid) ? e.target.value : this.state.val1;
@@ -56,7 +56,7 @@ class Calculator extends Component {
               className="border border-solid flex-1 ml-2 h-10 rounded p-5"
               placeholder="NUMBER e.g. 2108"
               type="text"
-              pattern="[0-9]*"
+              pattern="[-+]?[0-9]*\.?[0-9]*."
               value={this.state.val2}
               onChange={(e) => {
                 const b = (e.target.validity.valid) ? e.target.value : this.state.val2;
@@ -100,7 +100,7 @@ class Calculator extends Component {
               placeholder="Result"
               value={this.state.result}
               onChange={(e)=> this.setState({result: e.target.value})}
-              disabled
+              readOnly
             />
             <button 
               className="bg-red text-white font-bold py-2 px-10 rounded focus:outline-none" 
