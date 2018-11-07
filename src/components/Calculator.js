@@ -45,7 +45,7 @@ class Calculator extends Component {
               className="border border-solid flex-1 mr-2 h-10 rounded p-5"
               placeholder="NUMBER e.g. 1337"
               type="text"
-              pattern="[-+]?[0-9]*\.?[0-9]*."
+              pattern="[-+]?[0-9]*\.?[0-9]*"
               value={this.state.val1}
               onChange={(e) => {
                 const a = (e.target.validity.valid) ? e.target.value : this.state.val1;
@@ -56,7 +56,7 @@ class Calculator extends Component {
               className="border border-solid flex-1 ml-2 h-10 rounded p-5"
               placeholder="NUMBER e.g. 2108"
               type="text"
-              pattern="[-+]?[0-9]*\.?[0-9]*."
+              pattern="[-+]?[0-9]*\.?[0-9]*"
               value={this.state.val2}
               onChange={(e) => {
                 const b = (e.target.validity.valid) ? e.target.value : this.state.val2;
