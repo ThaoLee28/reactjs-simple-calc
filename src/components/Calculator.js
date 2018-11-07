@@ -100,6 +100,7 @@ class Calculator extends Component {
               placeholder="Result"
               value={this.state.result}
               onChange={(e)=> this.setState({result: e.target.value})}
+              disabled
             />
             <button 
               className="bg-red text-white font-bold py-2 px-10 rounded focus:outline-none" 
